@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Interactive Recipe Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Search Section -->
+    <h1>CuisCovery</h1>
+    <form id="recipeForm">
+      <input type="text" id="ingredientInput" placeholder="Enter ingredients (comma separated)" required>
+      <button type="submit">Find Recipes</button>
+    </form>
+
+    <!-- Intro Section -->
+    <div class="intro">
+      <h2>Why Food is Important?</h2>
+      <img src="https://c.ndtvimg.com/2022-05/o7uik5o8_world-cuisine_625x300_10_May_22.jpeg?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="Healthy Food">
+      <p>
+        Food is not just essential for life, energy, and growth — it’s also a source of joy and connection. Eating the right foods keeps us
+         healthy, boosts our focus, and makes us stronger, while enjoying delicious meals adds happiness to our daily lives.
+      </p>
+      <p>
+        With this Recipe Finder app, you can easily discover exciting dishes by simply entering the ingredients you already have at home. Explore, cook, and enjoy life with food made simple!
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    // Redirect to results.html with query params
+    document.getElementById("recipeForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const ingredients = document.getElementById("ingredientInput").value.trim();
+      if (ingredients) {
+        window.location.href = `results.html?ingredients=${encodeURIComponent(ingredients)}`;
+      }
+    });
+  </script>
+</body>
+</html>
